@@ -77,11 +77,11 @@ managedNodeGroups:
     instanceSelector: {}
     instanceType: c5.xlarge
     labels:
-      alpha.eksctl.io/cluster-name: cluster3e
-      alpha.eksctl.io/nodegroup-name: standard-workers
+      alpha.eksctl.io/cluster-name: DEFAULT-CLUSTER-NAME
+      alpha.eksctl.io/nodegroup-name: DEFAULT-CLUSTER-NAME-ng1
     maxSize: 2
     minSize: 0
-    name: ng1
+    name: DEFAULT-CLUSTER-NAME-ng1
     privateNetworking: false
     releaseVersion: ""
     securityGroups:
@@ -91,7 +91,7 @@ managedNodeGroups:
       allow: true
       publicKeyPath: ~/.ssh/id_rsa.pub
     tags:
-      alpha.eksctl.io/nodegroup-name: standard-workers
+      alpha.eksctl.io/nodegroup-name: DEFAULT-CLUSTER-NAME-ng1
       alpha.eksctl.io/nodegroup-type: managed
     volumeIOPS: 3000
     volumeSize: 80
@@ -120,11 +120,11 @@ managedNodeGroups:
     instanceSelector: {}
     instanceType: c5.xlarge
     labels:
-      alpha.eksctl.io/cluster-name: cluster3e
-      alpha.eksctl.io/nodegroup-name: standard-workers
+      alpha.eksctl.io/cluster-name: DEFAULT-CLUSTER-NAME
+      alpha.eksctl.io/nodegroup-name: DEFAULT-CLUSTER-NAME-ng2
     maxSize: 2
     minSize: 0
-    name: ng2
+    name: DEFAULT-CLUSTER-NAME-ng2
     privateNetworking: false
     releaseVersion: ""
     securityGroups:
@@ -134,7 +134,7 @@ managedNodeGroups:
       allow: true
       publicKeyPath: ~/.ssh/id_rsa.pub
     tags:
-      alpha.eksctl.io/nodegroup-name: standard-workers
+      alpha.eksctl.io/nodegroup-name: DEFAULT-CLUSTER-NAME-ng2
       alpha.eksctl.io/nodegroup-type: managed
     volumeIOPS: 3000
     volumeSize: 80

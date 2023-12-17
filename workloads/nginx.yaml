@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: my-hostnetwork-pod-2
 spec:
-  hostNetwork: false
+  hostNetwork: true
   containers:
     - name: container-name
       image: nginx

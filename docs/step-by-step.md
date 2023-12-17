@@ -109,8 +109,8 @@ kind: ENIConfig
 metadata:
 name: $az_1
 spec:
-securityGroups:
-- $cluster_security_group_id
+    securityGroups:
+      - $cluster_security_group_id
 subnet: $new_subnet_id_1
 EOF
 ```
@@ -124,7 +124,7 @@ metadata:
 spec: 
   securityGroups: 
     - $cluster_security_group_id
-  subnet: $new_subnet_id_2
+subnet: $new_subnet_id_2
 EOF
 ```
 
@@ -140,7 +140,7 @@ eksctl scale nodegroup --cluster=CLUSTER-NAME --nodes=0 NG-NAME
 eksctl scale nodegroup --cluster=CLUSTER-NAME --nodes=2 NG-NAME
 ```
 
-### Step 9 - Verify Custom Networing
+### Step 9 - Verify Custom Networking
 
 ```
 kubectl get pods -A -o wide
