@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-hostnetwork-pod-2
+spec:
+  hostNetwork: false
+  containers:
+    - name: container-name
+      image: nginx
+      ports:
+        - containerPort: 80
+          protocol: TCP
