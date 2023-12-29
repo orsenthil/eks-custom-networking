@@ -35,3 +35,9 @@ Pods an IP addresses from a CIDR range defined in a ENIConfig CRD.
 
 This tool will create a cluster with custom networking enabled. It will create two subnets in two different AZs. It will
 create two ENIConfig custom resources, one for each subnet. It will then recycle the nodes to enable custom networking.
+
+### Screenshots
+
+![](docs/2023-12-26_09-27.png)
+![](docs/2023-12-26_09-28.png)
+![](docs/2023-12-26_09-38.png)
