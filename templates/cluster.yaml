@@ -13,7 +13,7 @@ vpc:
   autoAllocateIPv6: false
   cidr: 192.168.0.0/24
   clusterEndpoints:
-    privateAccess: false
+    privateAccess: true
     publicAccess: true
   manageSharedNodeSecurityGroupRules: true
   nat:
@@ -52,6 +52,12 @@ kind: ClusterConfig
 
 kubernetesNetworkConfig:
   ipFamily: IPv4
+
+addons:
+  - name: vpc-cni
+    version: 1.14.1
+    configurationValues:  "{\"env\":{\"ENABLE_PREFIX_DELEGATION\":\"true\", \"ENABLE_POD_ENI\":\"true\", \"POD_SECURITY_GROUP_ENFORCING_MODE\":\"standard\"},\"enableNetworkPolicy\": \"true\"}"
+    resolveConflicts: overwrite
 
 managedNodeGroups:
   - amiFamily: Ubuntu2004
