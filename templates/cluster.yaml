@@ -3,7 +3,7 @@ apiVersion: eksctl.io/v1alpha5
 metadata:
   name: DEFAULT-CLUSTER-NAME
   region: us-west-2
-  version: "1.29"
+  version: "1.28"
 
 privateCluster:
   enabled: false
@@ -20,15 +20,13 @@ vpc:
     gateway: Single
 
 availabilityZones:
-  - us-west-2a
   - us-west-2b
-  - us-west-2c
-  - us-west-2d
+  - us-west-2a
 
 cloudWatch:
   clusterLogging:
     enableTypes: ["api", "audit", "authenticator", "controllerManager", "scheduler"]
-    logRetentionInDays: 3
+    logRetentionInDays: 60
 
 iam:
   vpcResourceControllerPolicy: true
@@ -57,7 +55,7 @@ kubernetesNetworkConfig:
 
 addons:
   - name: vpc-cni
-    version: 1.18.2
+    version: 1.14.1
     configurationValues:  "{\"env\":{\"ENABLE_PREFIX_DELEGATION\":\"true\", \"ENABLE_POD_ENI\":\"true\", \"POD_SECURITY_GROUP_ENFORCING_MODE\":\"standard\"},\"enableNetworkPolicy\": \"true\"}"
     resolveConflicts: overwrite
 
@@ -66,6 +64,7 @@ managedNodeGroups:
     desiredCapacity: 2
     disableIMDSv1: true
     disablePodIMDS: false
+    availabilityZones: ["us-west-2a"]
     iam:
       withAddonPolicies:
         albIngress: false
@@ -108,6 +107,7 @@ managedNodeGroups:
     desiredCapacity: 2
     disableIMDSv1: true
     disablePodIMDS: false
+    availabilityZones: ["us-west-2b"]
     iam:
       withAddonPolicies:
         albIngress: false
